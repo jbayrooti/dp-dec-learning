@@ -1,0 +1,30 @@
+exp_base: "results/"
+exp_name: "dinno_cifar100_10_node_split_1"
+system: "DiNNOSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  data_split_value: 1
+  dataset: "cifar100"
+graph_params:
+  num_nodes: 10
+  type: "complete"
+  p: 0.3
+  gen_attempts: 100
+model: "dpresnet9"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 400
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.005
+  learning_rate_finish: 0.0005
+  optimizer: "adam"
+dinno_params:
+  rho_init: 0.5
+  rho_scaling: 1.0003
+  primal_iterations: 2
+num_iterations: 25000
+iterations_per_validate: 250
+save_checkpoints_per_iter: null

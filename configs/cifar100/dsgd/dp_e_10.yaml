@@ -1,0 +1,34 @@
+exp_base: "results/"
+exp_name: "dp_dsgd_cifar100_e_10_d_1e-5_split_1"
+system: "DistributedDPConsensusSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  data_split_value: 1
+  dataset: "cifar100"
+graph_params:
+  num_nodes: 10
+  type: "complete"
+  graph: None
+  neighbor_weight: "average"
+  p: 0.99
+  gen_attempts: 100
+model: "dpresnet9"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 50
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.005
+  learning_rate_finish: 0.0005
+  optimizer: "sgd"
+dp_params:
+  effective_batch_size: 250
+  max_grad_norm: 10
+  delta: 0.00001
+  epsilon: 10
+  noise_multiplier: null
+num_iterations: 25000
+iterations_per_validate: 250
+save_checkpoints_per_iter: null

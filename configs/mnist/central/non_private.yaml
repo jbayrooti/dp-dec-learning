@@ -1,0 +1,20 @@
+exp_base: "results/"
+exp_name: "central_mnist_sgd_optim"
+system: "CentralSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  dataset: "mnist"
+model: "convnet"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 256
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.05
+  learning_rate_finish: 0.05
+  optimizer: "sgd"
+num_iterations: 2000
+iterations_per_validate: 20
+save_checkpoints_per_iter: null

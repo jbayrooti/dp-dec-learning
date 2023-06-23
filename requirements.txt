@@ -1,0 +1,14 @@
+dotmap
+matplotlib
+networkx==3.0
+numpy
+Pillow
+PyYAML
+scipy
+scikit-learn
+six==1.16.0
+tensorboard==2.12.0
+torch==1.13.1
+torchvision==0.14.1
+wandb==0.13.10
+opacus==1.4.0

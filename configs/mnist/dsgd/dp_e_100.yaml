@@ -1,0 +1,33 @@
+exp_base: "results/"
+exp_name: "dp_consensus_mnist_e_100_d_1e-5_split_1"
+system: "DistributedDPConsensusSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  data_split_value: 1
+  dataset: "mnist"
+graph_params:
+  num_nodes: 10
+  type: "complete"
+  graph: None
+  neighbor_weight: "average"
+  p: 0.99
+  gen_attempts: 100
+model: "convnet"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 256
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.2
+  learning_rate_finish: 0.0005
+  optimizer: "sgd"
+dp_params:
+  max_grad_norm: 10
+  delta: 0.00001
+  epsilon: 100
+  noise_multiplier: null
+num_iterations: 2000
+iterations_per_validate: 20
+save_checkpoints_per_iter: null

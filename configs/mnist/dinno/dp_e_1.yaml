@@ -1,0 +1,35 @@
+exp_base: "results/"
+exp_name: "dp_dinno_mnist_e_1_d_1e-5_split_1"
+system: "DPDiNNOSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  data_split_value: 1
+  dataset: "mnist"
+graph_params:
+  num_nodes: 10
+  type: "complete"
+  p: 0.3
+  gen_attempts: 100
+model: "convnet"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 256
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.01
+  learning_rate_finish: 0.0005
+  optimizer: "adam"
+dinno_params:
+  rho_init: 0.5
+  rho_scaling: 1.0003
+  primal_iterations: 1
+dp_params:
+  max_grad_norm: 10
+  delta: 0.00001
+  epsilon: 1
+  noise_multiplier: null
+num_iterations: 2000
+iterations_per_validate: 20
+save_checkpoints_per_iter: null

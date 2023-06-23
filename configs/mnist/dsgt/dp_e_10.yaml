@@ -1,0 +1,31 @@
+exp_base: "results/"
+exp_name: "dp_dsgt_mnist_e_10_d_1e-5_split_1"
+system: "DPDSGTSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  data_split_value: 1
+  dataset: "mnist"
+graph_params:
+  num_nodes: 10
+  type: "complete"
+  graph: None
+  neighbor_weight: "average"
+  p: 0.4
+  gen_attempts: 100
+model: "convnet"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 256
+  learning_rate_start: 0.174
+  learning_rate_finish: 0.005
+  optimizer: "sgd"
+dp_params:
+  max_grad_norm: 10
+  delta: 0.00001
+  epsilon: 10
+  noise_multiplier: null
+num_iterations: 2000
+iterations_per_validate: 20
+save_checkpoints_per_iter: null

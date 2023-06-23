@@ -1,0 +1,25 @@
+exp_base: "results/"
+exp_name: "dp_central_mnist_e_1_d_1e-5_grad_norm_1_sgd"
+system: "CentralDPSystem"
+gpu_device: 0
+num_workers: 0
+seed: 1331
+data_params:
+  dataset: "mnist"
+model: "convnet"
+loss: "CrossEntropy"
+optim_params:
+  batch_size: 256
+  momentum: 0.9
+  weight_decay: 0.0001
+  learning_rate_start: 0.194
+  learning_rate_finish: 0.194
+  optimizer: "sgd"
+dp_params:
+  max_grad_norm: 1
+  delta: 0.00001
+  epsilon: 1
+  noise_multiplier: null
+num_iterations: 2000
+iterations_per_validate: 20
+save_checkpoints_per_iter: null
